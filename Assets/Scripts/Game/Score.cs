@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class Score : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI scoreText;
-    public int score;
+    public static int score;
     int maxScore;
     
     void Start()
@@ -21,7 +21,9 @@ public class Score : MonoBehaviour
          
         if (score == maxScore)
         {
-            SceneManager.LoadSceneAsync("GameOver");
+            SceneManager.LoadSceneAsync("WinGame");
+            Time.timeScale = 0;
         }
     }
+
 }
